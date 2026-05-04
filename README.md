@@ -15,20 +15,13 @@ Design layered architecture for better data governance
 Generate business-level insights from raw data
 
 🗂️ Storage Layer
-
 Since this project uses dummy retail data, the storage layer is implemented using:
-
-✅ Databricks Volumes (used in this project)
-
-💡 In real-world production systems, this can be replaced with:
-
-AWS S3
-Azure Data Lake Storage (ADLS)
-
+Databricks Volumes (used in this project)
+In real-world production systems, this can be replaced with:
+AWS S3 or Azure Data Lake Storage (ADLS)
 
 🔄 Pipeline Workflow
 🔹 1. Raw → Bronze (Ingestion Layer)
-
 Purpose: Ingest raw data with minimal transformation
 Read raw JSON files from Databricks Volumes
 Add ingestion metadata (timestamp, source info)
@@ -50,7 +43,6 @@ Apply business/safety filters
 Generate daily product sales metrics
 Generate category-level sales insights
 Store results in Gold Delta Tables
-
 
 🔄 Orchestration
 Used Databricks Lakeflow for:
